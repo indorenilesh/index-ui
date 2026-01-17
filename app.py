@@ -14,6 +14,10 @@ mysqlHost = os.environ['MYSQL_HOST']
 
 app = Flask(__name__)
 
+@app.route('/health')
+def health():
+    return jsonify(status="healthy"), 200
+    
 @app.route('/')
 def indexpage():
     return redirect("/plot.png")
