@@ -16,7 +16,8 @@ app = Flask(__name__)
 
 @app.route('/health')
 def health():
-    return jsonify(status="healthy"), 200
+    return "UI is healthy", 200
+
     
 @app.route('/')
 def indexpage():
